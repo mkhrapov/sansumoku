@@ -1,0 +1,48 @@
+body {
+    font-family: sans-serif;
+    font-size: 40px;
+}
+
+#main {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+h1 a {
+    color: black;
+    text-decoration: none;
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 150%;
+    text-align: center;
+}
+
+#nav a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#nav a:hover {
+    text-decoration: underline;
+}
+
+span.divider {
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+p {
+    margin-top: 40px;
+    line-height: 150%;
+}
+
+
