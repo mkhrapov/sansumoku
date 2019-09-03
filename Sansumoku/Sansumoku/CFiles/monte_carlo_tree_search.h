@@ -1,5 +1,9 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  monte_carlo_tree_search.h
+//  Sansumoku
+//
+//  Created by Maksim Khrapov on 5/4/19.
+//  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
 // https://www.sansumoku.com/
@@ -17,6 +21,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#ifndef monte_carlo_tree_search_h
+#define monte_carlo_tree_search_h
+
 #include "board_state.h"
-#include "monte_carlo_tree_search.h"
-#include "advanced_mcts.h"
+int monte_carlo_tree_search(int iter_count, board_state *);
+
+
+#endif /* monte_carlo_tree_search_h */

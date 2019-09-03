@@ -17,4 +17,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include "board_state.h"
 #include "monte_carlo_tree_search.h"
+#include "advanced_mcts.h"

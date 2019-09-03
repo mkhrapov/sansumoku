@@ -1,5 +1,9 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  advanced_mcts_cpp.h
+//  Sansumoku
+//
+//  Created by Maksim Khrapov on 9/2/19.
+//  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
 // https://www.sansumoku.com/
@@ -17,6 +21,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#ifndef advanced_mcts_h
+#define advanced_mcts_h
+
 #include "board_state.h"
-#include "monte_carlo_tree_search.h"
-#include "advanced_mcts.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+    
+int advanced_mcts_v1(int iter_count, board_state *);
+    
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* advanced_mcts_h */

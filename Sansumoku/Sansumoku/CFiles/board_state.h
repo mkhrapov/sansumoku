@@ -1,5 +1,9 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  board_state.h
+//  Sansumoku
+//
+//  Created by Maksim Khrapov on 9/2/19.
+//  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
 // https://www.sansumoku.com/
@@ -17,6 +21,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "board_state.h"
-#include "monte_carlo_tree_search.h"
-#include "advanced_mcts.h"
+#ifndef board_state_h
+#define board_state_h
+
+#include <inttypes.h>
+
+typedef struct board_state {
+    int8_t cellOccupied[81];
+    int8_t cellValue[81];
+    int8_t cellAllowed[81];
+    int8_t sectionWon[9];
+    int8_t sectionAllowed[9];
+    int8_t sectionNextValue[9];
+    int8_t player;
+    int8_t gameWon;
+} board_state;
+
+
+#endif /* board_state_h */

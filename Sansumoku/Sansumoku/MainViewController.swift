@@ -33,7 +33,7 @@ func calcHorizontalOffset() -> CGFloat {
 }
 
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     var boardView: BoardView?
     var boardStateHistory: [BoardState] = []

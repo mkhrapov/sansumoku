@@ -12,7 +12,7 @@
 		500DCDE1226CDED200045802 /* BoardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50687E5921F8086300827806 /* BoardState.swift */; };
 		5026430922320D8A00FE6CF2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026430822320D8A00FE6CF2 /* SettingsViewController.swift */; };
 		50687E3821F8075700827806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50687E3721F8075700827806 /* AppDelegate.swift */; };
-		50687E3A21F8075700827806 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50687E3921F8075700827806 /* ViewController.swift */; };
+		50687E3A21F8075700827806 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50687E3921F8075700827806 /* MainViewController.swift */; };
 		50687E3D21F8075700827806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50687E3B21F8075700827806 /* Main.storyboard */; };
 		50687E3F21F8075700827806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50687E3E21F8075700827806 /* Assets.xcassets */; };
 		50687E4221F8075700827806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50687E4021F8075700827806 /* LaunchScreen.storyboard */; };
@@ -26,6 +26,15 @@
 		50A3793D2287496400358341 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 50A3793C2287496400358341 /* www */; };
 		50B77CCB224D9856009D0B12 /* AI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B77CCA224D9856009D0B12 /* AI.swift */; };
 		50E8C2C82248396300210F81 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8C2C72248396300210F81 /* RulesViewController.swift */; };
+		50FE5C14231DB0E400A33E4E /* SwiftBasicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE5C13231DB0E400A33E4E /* SwiftBasicPlayer.swift */; };
+		50FE5C15231DB0E400A33E4E /* SwiftBasicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE5C13231DB0E400A33E4E /* SwiftBasicPlayer.swift */; };
+		50FE5C17231DB2A700A33E4E /* EngineCompetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE5C16231DB2A700A33E4E /* EngineCompetition.swift */; };
+		50FE5C19231DB5D300A33E4E /* CppConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE5C18231DB5D300A33E4E /* CppConnector.swift */; };
+		50FE5C1A231DB5D300A33E4E /* CppConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE5C18231DB5D300A33E4E /* CppConnector.swift */; };
+		50FE5C25231DBC2A00A33E4E /* advanced_mcts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50FE5C24231DBC2A00A33E4E /* advanced_mcts.cpp */; };
+		50FE5C26231DBC2A00A33E4E /* advanced_mcts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50FE5C24231DBC2A00A33E4E /* advanced_mcts.cpp */; };
+		50FE5C2C231E0B1300A33E4E /* BaseGameEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50FE5C2A231E0B1300A33E4E /* BaseGameEngine.cpp */; };
+		50FE5C2D231E0B1300A33E4E /* BaseGameEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50FE5C2A231E0B1300A33E4E /* BaseGameEngine.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +52,7 @@
 		5026430822320D8A00FE6CF2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		50687E3421F8075700827806 /* Sansumoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sansumoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50687E3721F8075700827806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50687E3921F8075700827806 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		50687E3921F8075700827806 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		50687E3C21F8075700827806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50687E3E21F8075700827806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50687E4121F8075700827806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +70,14 @@
 		50A3793C2287496400358341 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		50B77CCA224D9856009D0B12 /* AI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI.swift; sourceTree = "<group>"; };
 		50E8C2C72248396300210F81 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		50FE5C13231DB0E400A33E4E /* SwiftBasicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBasicPlayer.swift; sourceTree = "<group>"; };
+		50FE5C16231DB2A700A33E4E /* EngineCompetition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineCompetition.swift; sourceTree = "<group>"; };
+		50FE5C18231DB5D300A33E4E /* CppConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CppConnector.swift; sourceTree = "<group>"; };
+		50FE5C1C231DB95A00A33E4E /* board_state.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = board_state.h; sourceTree = "<group>"; };
+		50FE5C1D231DBA5800A33E4E /* advanced_mcts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = advanced_mcts.h; sourceTree = "<group>"; };
+		50FE5C24231DBC2A00A33E4E /* advanced_mcts.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = advanced_mcts.cpp; sourceTree = "<group>"; };
+		50FE5C2A231E0B1300A33E4E /* BaseGameEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaseGameEngine.cpp; sourceTree = "<group>"; };
+		50FE5C2B231E0B1300A33E4E /* BaseGameEngine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BaseGameEngine.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,24 +119,24 @@
 		50687E3621F8075700827806 /* Sansumoku */ = {
 			isa = PBXGroup;
 			children = (
-				50A3793C2287496400358341 /* www */,
+				50FE5C29231E0AD300A33E4E /* CppGameEngines */,
+				50FE5C28231E0A9500A33E4E /* CFiles */,
+				50B77CCA224D9856009D0B12 /* AI.swift */,
 				50687E3721F8075700827806 /* AppDelegate.swift */,
-				50687E3921F8075700827806 /* ViewController.swift */,
-				50687E3B21F8075700827806 /* Main.storyboard */,
 				50687E3E21F8075700827806 /* Assets.xcassets */,
-				50687E4021F8075700827806 /* LaunchScreen.storyboard */,
-				50687E4321F8075700827806 /* Info.plist */,
-				50687E5721F8081A00827806 /* BoardView.swift */,
 				50687E5921F8086300827806 /* BoardState.swift */,
 				507A5E94227DDABF000FB0CE /* BoardStateInt8.swift */,
-				5026430822320D8A00FE6CF2 /* SettingsViewController.swift */,
+				50687E5721F8081A00827806 /* BoardView.swift */,
+				50FE5C27231E0A1300A33E4E /* SwiftGameEngines */,
+				50687E4321F8075700827806 /* Info.plist */,
+				50687E4021F8075700827806 /* LaunchScreen.storyboard */,
+				50687E3B21F8075700827806 /* Main.storyboard */,
+				50687E3921F8075700827806 /* MainViewController.swift */,
 				50E8C2C72248396300210F81 /* RulesViewController.swift */,
-				50B77CCA224D9856009D0B12 /* AI.swift */,
-				500DCDDE226CDC7C00045802 /* MonteCarloTreeSearch.swift */,
-				507A5E90227DD42C000FB0CE /* monte_carlo_tree_search.h */,
-				507A5E91227DD42C000FB0CE /* monte_carlo_tree_search.c */,
 				507A5E8E227DD42C000FB0CE /* Sansumoku-Bridging-Header.h */,
 				507A5E8F227DD42C000FB0CE /* SansumokuTests-Bridging-Header.h */,
+				5026430822320D8A00FE6CF2 /* SettingsViewController.swift */,
+				50A3793C2287496400358341 /* www */,
 			);
 			path = Sansumoku;
 			sourceTree = "<group>";
@@ -129,8 +146,40 @@
 			children = (
 				50687E4C21F8075700827806 /* SansumokuTests.swift */,
 				50687E4E21F8075700827806 /* Info.plist */,
+				50FE5C16231DB2A700A33E4E /* EngineCompetition.swift */,
 			);
 			path = SansumokuTests;
+			sourceTree = "<group>";
+		};
+		50FE5C27231E0A1300A33E4E /* SwiftGameEngines */ = {
+			isa = PBXGroup;
+			children = (
+				50FE5C18231DB5D300A33E4E /* CppConnector.swift */,
+				500DCDDE226CDC7C00045802 /* MonteCarloTreeSearch.swift */,
+				50FE5C13231DB0E400A33E4E /* SwiftBasicPlayer.swift */,
+			);
+			path = SwiftGameEngines;
+			sourceTree = "<group>";
+		};
+		50FE5C28231E0A9500A33E4E /* CFiles */ = {
+			isa = PBXGroup;
+			children = (
+				50FE5C1D231DBA5800A33E4E /* advanced_mcts.h */,
+				50FE5C24231DBC2A00A33E4E /* advanced_mcts.cpp */,
+				50FE5C1C231DB95A00A33E4E /* board_state.h */,
+				507A5E91227DD42C000FB0CE /* monte_carlo_tree_search.c */,
+				507A5E90227DD42C000FB0CE /* monte_carlo_tree_search.h */,
+			);
+			path = CFiles;
+			sourceTree = "<group>";
+		};
+		50FE5C29231E0AD300A33E4E /* CppGameEngines */ = {
+			isa = PBXGroup;
+			children = (
+				50FE5C2A231E0B1300A33E4E /* BaseGameEngine.cpp */,
+				50FE5C2B231E0B1300A33E4E /* BaseGameEngine.hpp */,
+			);
+			path = CppGameEngines;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,11 +289,15 @@
 				50687E5A21F8086300827806 /* BoardState.swift in Sources */,
 				507A5E95227DDABF000FB0CE /* BoardStateInt8.swift in Sources */,
 				50687E5821F8081A00827806 /* BoardView.swift in Sources */,
-				50687E3A21F8075700827806 /* ViewController.swift in Sources */,
+				50687E3A21F8075700827806 /* MainViewController.swift in Sources */,
+				50FE5C2C231E0B1300A33E4E /* BaseGameEngine.cpp in Sources */,
+				50FE5C25231DBC2A00A33E4E /* advanced_mcts.cpp in Sources */,
 				5026430922320D8A00FE6CF2 /* SettingsViewController.swift in Sources */,
 				507A5E92227DD42C000FB0CE /* monte_carlo_tree_search.c in Sources */,
 				50B77CCB224D9856009D0B12 /* AI.swift in Sources */,
+				50FE5C19231DB5D300A33E4E /* CppConnector.swift in Sources */,
 				50E8C2C82248396300210F81 /* RulesViewController.swift in Sources */,
+				50FE5C14231DB0E400A33E4E /* SwiftBasicPlayer.swift in Sources */,
 				50687E3821F8075700827806 /* AppDelegate.swift in Sources */,
 				500DCDDF226CDC7C00045802 /* MonteCarloTreeSearch.swift in Sources */,
 			);
@@ -255,10 +308,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				500DCDE1226CDED200045802 /* BoardState.swift in Sources */,
+				50FE5C17231DB2A700A33E4E /* EngineCompetition.swift in Sources */,
+				50FE5C2D231E0B1300A33E4E /* BaseGameEngine.cpp in Sources */,
 				507A5E96227DDABF000FB0CE /* BoardStateInt8.swift in Sources */,
+				50FE5C1A231DB5D300A33E4E /* CppConnector.swift in Sources */,
 				507A5E93227DD42C000FB0CE /* monte_carlo_tree_search.c in Sources */,
+				50FE5C15231DB0E400A33E4E /* SwiftBasicPlayer.swift in Sources */,
 				50687E4D21F8075700827806 /* SansumokuTests.swift in Sources */,
 				500DCDE0226CDE8D00045802 /* MonteCarloTreeSearch.swift in Sources */,
+				50FE5C26231DBC2A00A33E4E /* advanced_mcts.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

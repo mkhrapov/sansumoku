@@ -67,7 +67,7 @@ class SansumokuTests: XCTestCase {
     
     func testBridgeToCLang() {
         let boardState = BoardState()
-        let aiEngine = MonteCarloTreeSearch(boardState)
+        let aiEngine = CppConnector(boardState)
         let result = aiEngine.bridge_to_c(10000)
         print(result)
     }

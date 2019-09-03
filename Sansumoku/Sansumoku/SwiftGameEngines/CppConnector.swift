@@ -1,8 +1,8 @@
 //
-//  MonteCarloTreeSearch.swift
+//  CppConnector.swift
 //  Sansumoku
 //
-//  Created by Maksim Khrapov on 4/21/19.
+//  Created by Maksim Khrapov on 9/2/19.
 //  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
@@ -21,10 +21,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 import Foundation
 
 
-final class MonteCarloTreeSearch {
+final class CppConnector {
     let boardState: BoardState
     
     
@@ -33,82 +34,7 @@ final class MonteCarloTreeSearch {
     }
     
     
-    func basic(_ iterCount: Int) -> (Int, Int) {
-        let moves = boardState.allLegalMoves()
-        let whoami = boardState.player
-        var counts: [Double] = Array(repeating: 0.0, count: moves.count)
-        
-        for _ in 0..<iterCount {  // was c
-            for i in 0..<counts.count {
-                let (x, y) = moves[i]
-                let child = boardState.clone()
-                _ = child.set(x, y)
-                let res = playout(child)
-                if res == whoami {
-                    counts[i] += 1.0
-                }
-                else if res == DONE {
-                    counts[i] += 0.5
-                }
-            }
-            
-            /*
-            print(c)
-            if c % 100 == 0 {
-                prettyPrint(counts)
-            }
-            */
-        }
-        
-        let maxCount = counts.max()!
-        let maxIndex = counts.firstIndex(of: maxCount)!
-        
-        //prettyPrint(counts)
-        
-        return moves[maxIndex]
-    }
-    
-    
-    func playout(_ state: BoardState) -> Int {
-        let prev = state.clone()
-        var x: Int = 0
-        var y: Int = 0
-        var madeMove: Bool = false
-        
-        while !state.isTerminal() {
-            let moves = state.allLegalMoves()
-            if moves.count == 0 {
-                prev.display()
-                state.display()
-                fatalError("State is not terminal, but move count is zero.")
-            }
-            else if madeMove {
-                _ = prev.set(x, y)
-            }
-            let index = Int.random(in: 0..<moves.count)
-            (x, y) = moves[index]
-            _ = state.set(x, y)
-            madeMove = true
-        }
-        
-        return state.gameWon
-    }
-    
-    
-    func prettyPrint(_ counts: [Double]) {
-        for y in 0..<9 {
-            for x in 0..<9 {
-                let i = y*9 + x
-                print(String(format: " %7.1f", counts[i]), terminator: "")
-            }
-            print()
-        }
-    }
-    
-    
-    func bridge_to_c(_ iterCount: Int) -> (Int, Int) {
-        let bs_p = UnsafeMutablePointer<board_state>.allocate(capacity: 1)
-        
+    private func setBoardStateValues(_ bs_p: UnsafeMutablePointer<board_state>) {
         let bs_int8 = BoardStateInt8(boardState)
         
         bs_p.pointee.player = bs_int8.player
@@ -402,8 +328,25 @@ final class MonteCarloTreeSearch {
             bs_int8.cellOccupied[79],
             bs_int8.cellOccupied[80]
         )
+    }
         
+        
+    func bridge_to_c(_ iterCount: Int) -> (Int, Int) {
+        let bs_p = UnsafeMutablePointer<board_state>.allocate(capacity: 1)
+        setBoardStateValues(bs_p)
         let res = monte_carlo_tree_search(Int32(iterCount), bs_p)
+        bs_p.deallocate()
+        
+        let x: Int = Int(res) % 9
+        let y: Int = Int(res) / 9
+        return (x, y)
+    }
+    
+    
+    func bridge_to_cpp_v1(_ iterCount: Int) -> (Int, Int) {
+        let bs_p = UnsafeMutablePointer<board_state>.allocate(capacity: 1)
+        setBoardStateValues(bs_p)
+        let res = advanced_mcts_v1(Int32(iterCount), bs_p)
         bs_p.deallocate()
         
         let x: Int = Int(res) % 9

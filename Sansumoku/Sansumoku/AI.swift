@@ -41,54 +41,17 @@ final class AI {
     
     
     func respond() -> (Int, Int) {
-        let moves = givenBoardState.allLegalMoves()
-        if moves.count == 0 {
-            return (0, 0)
-        }
-        
-        if(moves.count == 1) {
-            return moves[0]
-        }
-        
-        let whoami = givenBoardState.player
-        
-        // check for immediately winning move
-        for i in 0..<moves.count {
-            let (x, y) = moves[i]
-            let child = givenBoardState.clone()
-            _ = child.set(x, y)
-            if child.isTerminal() && child.gameWon == whoami {
-                return (x, y)
-            }
-        }
-        
-        // no immediately winning move
         let aiLevel = UserDefaults.standard.integer(forKey: aiLevelKey)
-        if aiLevel == 0 {
-            return basicallyRandomMove()
-        }
-        else {
-            return basicMonteCarloTreeSearch(aiLevel)
-        }
-    }
-    
-    
-    func basicallyRandomMove() -> (Int, Int) {
-        let moves = givenBoardState.allLegalMoves()
-        let randomIndex = Int.random(in: 0..<moves.count)
-        return moves[randomIndex]
-    }
-    
-    
-    func basicMonteCarloTreeSearch(_ aiLevel: Int) -> (Int, Int) {
-        let aiIterations: Int
         switch aiLevel {
-        case 1: aiIterations = 100
-        case 2: aiIterations = 1000
-        default: aiIterations = 100
+        case 0:
+            let aiEngine = SwiftBasicPlayer(givenBoardState)
+            return aiEngine.basicPlay()
+        case 1:
+            let aiEngine = CppConnector(givenBoardState)
+            return aiEngine.bridge_to_c(100)
+        default:
+            let aiEngine = CppConnector(givenBoardState)
+            return aiEngine.bridge_to_c(1000)
         }
-        
-        let aiEngine = MonteCarloTreeSearch(givenBoardState)
-        return aiEngine.bridge_to_c(aiIterations)
     }
 }

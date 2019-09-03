@@ -1,5 +1,9 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  BaseGameEngine.cpp
+//  Sansumoku
+//
+//  Created by Maksim Khrapov on 9/2/19.
+//  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
 // https://www.sansumoku.com/
@@ -17,6 +21,4 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "board_state.h"
-#include "monte_carlo_tree_search.h"
-#include "advanced_mcts.h"
+#include "BaseGameEngine.hpp"

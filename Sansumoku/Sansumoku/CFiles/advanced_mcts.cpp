@@ -1,8 +1,8 @@
 //
-//  monte_carlo_tree_search.h
+//  advanced_mcts.cpp
 //  Sansumoku
 //
-//  Created by Maksim Khrapov on 5/4/19.
+//  Created by Maksim Khrapov on 9/2/19.
 //  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
@@ -21,24 +21,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef monte_carlo_tree_search_h
-#define monte_carlo_tree_search_h
-
-#include <inttypes.h>
-
-typedef struct board_state {
-    int8_t cellOccupied[81];
-    int8_t cellValue[81];
-    int8_t cellAllowed[81];
-    int8_t sectionWon[9];
-    int8_t sectionAllowed[9];
-    int8_t sectionNextValue[9];
-    int8_t player;
-    int8_t gameWon;
-} board_state;
 
 
-int monte_carlo_tree_search(int iter_count, board_state *);
+#include "advanced_mcts.h"
 
-
-#endif /* monte_carlo_tree_search_h */
+int advanced_mcts_v1(int iter_count, board_state *) {
+    // create AdvancedMonteCarloTreeSearch instance
+    // call search with iter_count
+    
+    
+    return 0;
+}
