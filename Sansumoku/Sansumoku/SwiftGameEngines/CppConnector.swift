@@ -351,21 +351,4 @@ class CppConnector: AIEngine {
     func actualSearchFunction(_ bs_p: UnsafeMutablePointer<board_state>) -> Int {
         return 0
     }
-    
-        
-        
-    
-    
-    /*
-    func bridge_to_cpp_v1(_ iterCount: Int) -> (Int, Int) {
-        let bs_p = UnsafeMutablePointer<board_state>.allocate(capacity: 1)
-        setBoardStateValues(bs_p)
-        let res = advanced_mcts_v1(Int32(iterCount), bs_p)
-        bs_p.deallocate()
-        
-        let x: Int = Int(res) % 9
-        let y: Int = Int(res) / 9
-        return (x, y)
-    }
- */
 }

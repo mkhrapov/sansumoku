@@ -1,8 +1,8 @@
 //
-//  advanced_mcts.cpp
+//  ConnectorV1.swift
 //  Sansumoku
 //
-//  Created by Maksim Khrapov on 9/2/19.
+//  Created by Maksim Khrapov on 9/6/19.
 //  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
@@ -21,15 +21,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import Foundation
 
-
-#include "advanced_mcts.h"
-
-int advanced_mcts_v1(int iter_count, board_state *) {
-    // Create BoardState
-    // Create EngineV1
-    // call search with iter_count
+final class ConnectorV1: CppConnector {
+    private var iterCount = 1000
     
     
-    return 0;
+    override func actualSearchFunction(_ bs_p: UnsafeMutablePointer<board_state>) -> Int {
+        let res = advanced_mcts_v1(Int32(iterCount), bs_p)
+        return Int(res)
+    }
+    
+    
+    func setIterCount(_ i: Int) {
+        iterCount = i
+    }
 }

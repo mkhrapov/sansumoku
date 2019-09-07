@@ -1,8 +1,8 @@
 //
-//  advanced_mcts.cpp
+//  EngineV1.cpp
 //  Sansumoku
 //
-//  Created by Maksim Khrapov on 9/2/19.
+//  Created by Maksim Khrapov on 9/6/19.
 //  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
@@ -21,15 +21,4 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
-
-#include "advanced_mcts.h"
-
-int advanced_mcts_v1(int iter_count, board_state *) {
-    // Create BoardState
-    // Create EngineV1
-    // call search with iter_count
-    
-    
-    return 0;
-}
+#include "EngineV1.hpp"

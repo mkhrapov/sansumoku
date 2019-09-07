@@ -28,6 +28,12 @@
 		50AD838C23232A6000993669 /* AIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD838A23232A6000993669 /* AIEngine.swift */; };
 		50AD838E23232D0B00993669 /* ConnectorOldC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD838D23232D0B00993669 /* ConnectorOldC.swift */; };
 		50AD838F23232D0B00993669 /* ConnectorOldC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD838D23232D0B00993669 /* ConnectorOldC.swift */; };
+		50AD839123234EB400993669 /* ConnectorV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD839023234EB400993669 /* ConnectorV1.swift */; };
+		50AD839223234EB400993669 /* ConnectorV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD839023234EB400993669 /* ConnectorV1.swift */; };
+		50AD83952323507300993669 /* BoardState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50AD83932323507300993669 /* BoardState.cpp */; };
+		50AD83962323507300993669 /* BoardState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50AD83932323507300993669 /* BoardState.cpp */; };
+		50AD83992323511800993669 /* EngineV1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50AD83972323511800993669 /* EngineV1.cpp */; };
+		50AD839A2323511800993669 /* EngineV1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50AD83972323511800993669 /* EngineV1.cpp */; };
 		50B77CCB224D9856009D0B12 /* AI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B77CCA224D9856009D0B12 /* AI.swift */; };
 		50E8C2C82248396300210F81 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8C2C72248396300210F81 /* RulesViewController.swift */; };
 		50FE5C14231DB0E400A33E4E /* SwiftBasicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE5C13231DB0E400A33E4E /* SwiftBasicPlayer.swift */; };
@@ -74,6 +80,11 @@
 		50A3793C2287496400358341 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		50AD838A23232A6000993669 /* AIEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIEngine.swift; sourceTree = "<group>"; };
 		50AD838D23232D0B00993669 /* ConnectorOldC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectorOldC.swift; sourceTree = "<group>"; };
+		50AD839023234EB400993669 /* ConnectorV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectorV1.swift; sourceTree = "<group>"; };
+		50AD83932323507300993669 /* BoardState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BoardState.cpp; sourceTree = "<group>"; };
+		50AD83942323507300993669 /* BoardState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BoardState.hpp; sourceTree = "<group>"; };
+		50AD83972323511800993669 /* EngineV1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EngineV1.cpp; sourceTree = "<group>"; };
+		50AD83982323511800993669 /* EngineV1.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EngineV1.hpp; sourceTree = "<group>"; };
 		50B77CCA224D9856009D0B12 /* AI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI.swift; sourceTree = "<group>"; };
 		50E8C2C72248396300210F81 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		50FE5C13231DB0E400A33E4E /* SwiftBasicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBasicPlayer.swift; sourceTree = "<group>"; };
@@ -165,6 +176,7 @@
 				50FE5C13231DB0E400A33E4E /* SwiftBasicPlayer.swift */,
 				50AD838A23232A6000993669 /* AIEngine.swift */,
 				50AD838D23232D0B00993669 /* ConnectorOldC.swift */,
+				50AD839023234EB400993669 /* ConnectorV1.swift */,
 			);
 			path = SwiftGameEngines;
 			sourceTree = "<group>";
@@ -186,6 +198,10 @@
 			children = (
 				50FE5C2A231E0B1300A33E4E /* BaseGameEngine.cpp */,
 				50FE5C2B231E0B1300A33E4E /* BaseGameEngine.hpp */,
+				50AD83932323507300993669 /* BoardState.cpp */,
+				50AD83942323507300993669 /* BoardState.hpp */,
+				50AD83972323511800993669 /* EngineV1.cpp */,
+				50AD83982323511800993669 /* EngineV1.hpp */,
 			);
 			path = CppGameEngines;
 			sourceTree = "<group>";
@@ -296,6 +312,8 @@
 			files = (
 				50AD838B23232A6000993669 /* AIEngine.swift in Sources */,
 				50687E5A21F8086300827806 /* BoardState.swift in Sources */,
+				50AD839123234EB400993669 /* ConnectorV1.swift in Sources */,
+				50AD83992323511800993669 /* EngineV1.cpp in Sources */,
 				507A5E95227DDABF000FB0CE /* BoardStateInt8.swift in Sources */,
 				50687E5821F8081A00827806 /* BoardView.swift in Sources */,
 				50687E3A21F8075700827806 /* MainViewController.swift in Sources */,
@@ -305,6 +323,7 @@
 				507A5E92227DD42C000FB0CE /* monte_carlo_tree_search.c in Sources */,
 				50B77CCB224D9856009D0B12 /* AI.swift in Sources */,
 				50FE5C19231DB5D300A33E4E /* CppConnector.swift in Sources */,
+				50AD83952323507300993669 /* BoardState.cpp in Sources */,
 				50AD838E23232D0B00993669 /* ConnectorOldC.swift in Sources */,
 				50E8C2C82248396300210F81 /* RulesViewController.swift in Sources */,
 				50FE5C14231DB0E400A33E4E /* SwiftBasicPlayer.swift in Sources */,
@@ -317,10 +336,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AD83962323507300993669 /* BoardState.cpp in Sources */,
 				500DCDE1226CDED200045802 /* BoardState.swift in Sources */,
 				50AD838C23232A6000993669 /* AIEngine.swift in Sources */,
 				50FE5C17231DB2A700A33E4E /* EngineCompetition.swift in Sources */,
 				50FE5C2D231E0B1300A33E4E /* BaseGameEngine.cpp in Sources */,
+				50AD839A2323511800993669 /* EngineV1.cpp in Sources */,
+				50AD839223234EB400993669 /* ConnectorV1.swift in Sources */,
 				507A5E96227DDABF000FB0CE /* BoardStateInt8.swift in Sources */,
 				50FE5C1A231DB5D300A33E4E /* CppConnector.swift in Sources */,
 				507A5E93227DD42C000FB0CE /* monte_carlo_tree_search.c in Sources */,
