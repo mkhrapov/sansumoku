@@ -7,7 +7,7 @@ An original board game for 2 players, a mash-up of Sudoku and Ultimate Tic-Tac-T
 What would you find interesting in this repo as a developer?
 
 - Custom board is implemented using drawing in Core Graphics
-- AI Engine is implemented in C, so you can learn how to integrated reasonably complex C code with Swift.
+- AI Engine is implemented in C, so you can learn how to integrate reasonably complex C code with Swift.
 - [Monte Carlo Tree Search](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search) algorithm
 
 ![Sansumoku screenshot](img/sansumoku.png)
