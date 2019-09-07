@@ -42,16 +42,17 @@ final class AI {
     
     func respond() -> (Int, Int) {
         let aiLevel = UserDefaults.standard.integer(forKey: aiLevelKey)
-        switch aiLevel {
-        case 0:
-            let aiEngine = SwiftBasicPlayer(givenBoardState)
-            return aiEngine.basicPlay()
-        case 1:
-            let aiEngine = CppConnector(givenBoardState)
-            return aiEngine.bridge_to_c(100)
-        default:
-            let aiEngine = CppConnector(givenBoardState)
-            return aiEngine.bridge_to_c(1000)
-        }
+        let aiEngine: AIEngine = {
+            switch aiLevel {
+            case 0:
+                return SwiftBasicPlayer(givenBoardState)
+            case 1:
+                return ConnectorOldC(givenBoardState)
+            default:
+                return ConnectorOldC(givenBoardState)
+            }
+        }()
+        
+        return aiEngine.search()
     }
 }

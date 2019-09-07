@@ -35,11 +35,57 @@ class EngineCompetition: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func playoff(_ count: Int, blue: AIEngine, orange: AIEngine) -> (Int, Int, Int) {
+        var blueWon = 0
+        var orangeWon = 0
+        var isDraw = 0
+        
+        for i in 0..<count {
+            print("Stared run \(i+1)")
+            let bs = BoardState()
+            blue.setBoardState(bs)
+            orange.setBoardState(bs)
+            
+            while !bs.isTerminal() {
+                if bs.player == BLUE {
+                    let (x, y) = blue.search()
+                    _ = bs.set(x, y)
+                }
+                else {
+                    let (x, y) = orange.search()
+                    _ = bs.set(x, y)
+                }
+            }
+            
+            if bs.gameWon == BLUE {
+                blueWon += 1
+                print("Blue Won")
+            }
+            else if bs.gameWon == ORAN {
+                orangeWon += 1
+                print("Orange Won")
+            }
+            else if bs.gameWon == DONE {
+                isDraw += 1
+                print("It's a draw!")
+            }
+            else {
+                fatalError("Game is not finished")
+            }
+        }
+        
+        return (blueWon, orangeWon, isDraw)
     }
 
     
-
+    func testBasicVsOldC() {
+        let bs = BoardState()
+        let blue = SwiftBasicPlayer(bs)
+        let orange = ConnectorOldC(bs)
+        
+        let count = 10
+        let (b, o, d) = playoff(count, blue: blue, orange: orange)
+        
+        print("Blue won \(b) times, Orange won \(o) times, Draw \(d) times out of \(count) plays.")
+    }
 }

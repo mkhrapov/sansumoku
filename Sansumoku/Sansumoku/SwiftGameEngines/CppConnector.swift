@@ -25,12 +25,17 @@
 import Foundation
 
 
-final class CppConnector {
-    let boardState: BoardState
+class CppConnector: AIEngine {
+    private var boardState: BoardState
     
     
     init(_ boardState: BoardState) {
         self.boardState = boardState
+    }
+    
+    
+    func setBoardState(_ bs: BoardState) {
+        boardState = bs
     }
     
     
@@ -329,12 +334,12 @@ final class CppConnector {
             bs_int8.cellOccupied[80]
         )
     }
-        
-        
-    func bridge_to_c(_ iterCount: Int) -> (Int, Int) {
+    
+    
+    func search() -> (Int, Int) {
         let bs_p = UnsafeMutablePointer<board_state>.allocate(capacity: 1)
         setBoardStateValues(bs_p)
-        let res = monte_carlo_tree_search(Int32(iterCount), bs_p)
+        let res = actualSearchFunction(bs_p)
         bs_p.deallocate()
         
         let x: Int = Int(res) % 9
@@ -343,6 +348,15 @@ final class CppConnector {
     }
     
     
+    func actualSearchFunction(_ bs_p: UnsafeMutablePointer<board_state>) -> Int {
+        return 0
+    }
+    
+        
+        
+    
+    
+    /*
     func bridge_to_cpp_v1(_ iterCount: Int) -> (Int, Int) {
         let bs_p = UnsafeMutablePointer<board_state>.allocate(capacity: 1)
         setBoardStateValues(bs_p)
@@ -353,4 +367,5 @@ final class CppConnector {
         let y: Int = Int(res) / 9
         return (x, y)
     }
+ */
 }

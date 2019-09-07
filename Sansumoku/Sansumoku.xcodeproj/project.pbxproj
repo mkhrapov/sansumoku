@@ -24,6 +24,10 @@
 		507A5E95227DDABF000FB0CE /* BoardStateInt8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A5E94227DDABF000FB0CE /* BoardStateInt8.swift */; };
 		507A5E96227DDABF000FB0CE /* BoardStateInt8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A5E94227DDABF000FB0CE /* BoardStateInt8.swift */; };
 		50A3793D2287496400358341 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 50A3793C2287496400358341 /* www */; };
+		50AD838B23232A6000993669 /* AIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD838A23232A6000993669 /* AIEngine.swift */; };
+		50AD838C23232A6000993669 /* AIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD838A23232A6000993669 /* AIEngine.swift */; };
+		50AD838E23232D0B00993669 /* ConnectorOldC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD838D23232D0B00993669 /* ConnectorOldC.swift */; };
+		50AD838F23232D0B00993669 /* ConnectorOldC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD838D23232D0B00993669 /* ConnectorOldC.swift */; };
 		50B77CCB224D9856009D0B12 /* AI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B77CCA224D9856009D0B12 /* AI.swift */; };
 		50E8C2C82248396300210F81 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E8C2C72248396300210F81 /* RulesViewController.swift */; };
 		50FE5C14231DB0E400A33E4E /* SwiftBasicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE5C13231DB0E400A33E4E /* SwiftBasicPlayer.swift */; };
@@ -68,6 +72,8 @@
 		507A5E91227DD42C000FB0CE /* monte_carlo_tree_search.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = monte_carlo_tree_search.c; sourceTree = "<group>"; };
 		507A5E94227DDABF000FB0CE /* BoardStateInt8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardStateInt8.swift; sourceTree = "<group>"; };
 		50A3793C2287496400358341 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		50AD838A23232A6000993669 /* AIEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIEngine.swift; sourceTree = "<group>"; };
+		50AD838D23232D0B00993669 /* ConnectorOldC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectorOldC.swift; sourceTree = "<group>"; };
 		50B77CCA224D9856009D0B12 /* AI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI.swift; sourceTree = "<group>"; };
 		50E8C2C72248396300210F81 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		50FE5C13231DB0E400A33E4E /* SwiftBasicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBasicPlayer.swift; sourceTree = "<group>"; };
@@ -157,6 +163,8 @@
 				50FE5C18231DB5D300A33E4E /* CppConnector.swift */,
 				500DCDDE226CDC7C00045802 /* MonteCarloTreeSearch.swift */,
 				50FE5C13231DB0E400A33E4E /* SwiftBasicPlayer.swift */,
+				50AD838A23232A6000993669 /* AIEngine.swift */,
+				50AD838D23232D0B00993669 /* ConnectorOldC.swift */,
 			);
 			path = SwiftGameEngines;
 			sourceTree = "<group>";
@@ -286,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AD838B23232A6000993669 /* AIEngine.swift in Sources */,
 				50687E5A21F8086300827806 /* BoardState.swift in Sources */,
 				507A5E95227DDABF000FB0CE /* BoardStateInt8.swift in Sources */,
 				50687E5821F8081A00827806 /* BoardView.swift in Sources */,
@@ -296,6 +305,7 @@
 				507A5E92227DD42C000FB0CE /* monte_carlo_tree_search.c in Sources */,
 				50B77CCB224D9856009D0B12 /* AI.swift in Sources */,
 				50FE5C19231DB5D300A33E4E /* CppConnector.swift in Sources */,
+				50AD838E23232D0B00993669 /* ConnectorOldC.swift in Sources */,
 				50E8C2C82248396300210F81 /* RulesViewController.swift in Sources */,
 				50FE5C14231DB0E400A33E4E /* SwiftBasicPlayer.swift in Sources */,
 				50687E3821F8075700827806 /* AppDelegate.swift in Sources */,
@@ -308,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				500DCDE1226CDED200045802 /* BoardState.swift in Sources */,
+				50AD838C23232A6000993669 /* AIEngine.swift in Sources */,
 				50FE5C17231DB2A700A33E4E /* EngineCompetition.swift in Sources */,
 				50FE5C2D231E0B1300A33E4E /* BaseGameEngine.cpp in Sources */,
 				507A5E96227DDABF000FB0CE /* BoardStateInt8.swift in Sources */,
@@ -317,6 +328,7 @@
 				50687E4D21F8075700827806 /* SansumokuTests.swift in Sources */,
 				500DCDE0226CDE8D00045802 /* MonteCarloTreeSearch.swift in Sources */,
 				50FE5C26231DBC2A00A33E4E /* advanced_mcts.cpp in Sources */,
+				50AD838F23232D0B00993669 /* ConnectorOldC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

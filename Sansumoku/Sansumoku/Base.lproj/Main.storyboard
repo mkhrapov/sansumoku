@@ -52,6 +52,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newGameButton" destination="Baz-f4-hrR" id="Lkm-LS-mKS"/>
+                        <outlet property="undoButton" destination="CJZ-9Z-SBn" id="rFP-hd-gp1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

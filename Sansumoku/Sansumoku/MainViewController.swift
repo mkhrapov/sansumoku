@@ -43,11 +43,20 @@ class MainViewController: UIViewController {
     var freezeUI = false
     
     
+    @IBOutlet weak var newGameButton: UIButton!
+    @IBOutlet weak var undoButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         navigationItem.title = "Sansumoku"
+        
+        newGameButton.layer.cornerRadius = 10
+        newGameButton.clipsToBounds = true
+        undoButton.layer.cornerRadius = 10
+        undoButton.clipsToBounds = true
         
         let boardState = BoardState()
         boardStateHistory.append(boardState)

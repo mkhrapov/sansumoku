@@ -23,8 +23,8 @@
 
 import Foundation
 
-final class SwiftBasicPlayer {
-    private let givenBoardState: BoardState
+final class SwiftBasicPlayer: AIEngine {
+    private var givenBoardState: BoardState
     
     
     init(_ givenBoardState: BoardState) {
@@ -32,7 +32,19 @@ final class SwiftBasicPlayer {
     }
     
     
-    func basicPlay() -> (Int, Int) {
+    func setBoardState(_ bs: BoardState) {
+        givenBoardState = bs
+    }
+    
+    
+    func search() -> (Int, Int) {
+        if givenBoardState.isInitialState() {
+            // use precomputed value
+            let moves = [(3,3), (3, 5), (5,3), (5,5), (4,4)]
+            let randomIndex = Int.random(in: 0..<moves.count)
+            return moves[randomIndex]
+        }
+        
         let moves = givenBoardState.allLegalMoves()
         
         if moves.count == 0 {

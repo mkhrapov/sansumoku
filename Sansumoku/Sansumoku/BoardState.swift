@@ -90,6 +90,16 @@ final class BoardState {
     }
     
     
+    func isInitialState() -> Bool {
+        for i in cellOccupied {
+            if i != OPEN {
+                return false
+            }
+        }
+        return true
+    }
+    
+    
     func isTerminal() -> Bool {
         return gameWon != OPEN
     }
