@@ -53,8 +53,6 @@ class BoardView: UIView {
     var boardState: BoardState?
     var indicator: UIActivityIndicatorView?
     var shouldDisplayIndicator = false
-    var hOffset: CGFloat = 10.0
-    var vOffset: CGFloat = 100.0
     
     
     func setBoardState(_ bs: BoardState) {
@@ -73,9 +71,9 @@ class BoardView: UIView {
             if indicator == nil {
                 indicator = UIActivityIndicatorView(style: .whiteLarge)
                 indicator!.color = UIColor.black
-                indicator!.center = calcCenter()
                 indicator!.hidesWhenStopped = true
             }
+            indicator!.center = CGPoint(x: bounds.midX, y: bounds.midY)
             self.addSubview(indicator!)
             indicator!.startAnimating()
         }
@@ -88,14 +86,6 @@ class BoardView: UIView {
     }
     
     
-    func calcCenter() -> CGPoint {
-        let c = self.center
-        let x = c.x - hOffset
-        let y = c.y - vOffset
-        return CGPoint(x: x, y: y)
-    }
-    
-    
     override func draw(_ rect: CGRect) {
         guard let boardState = boardState else {
             return
@@ -105,7 +95,7 @@ class BoardView: UIView {
             return
         }
         
-        let draw = Draw(context, rect, boardState)
+        let draw = Draw(context, bounds, boardState)
         draw.draw()
         activityIndicator()
     }

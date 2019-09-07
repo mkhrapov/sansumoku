@@ -23,15 +23,6 @@
 
 import UIKit
 
-func calcHorizontalOffset() -> CGFloat {
-    if UIScreen.main.bounds.size.width > 414.0 {
-        return (UIScreen.main.bounds.size.width - 394.0) / 2.0
-    }
-    else {
-        return 10.0
-    }
-}
-
 
 class MainViewController: UIViewController {
 
@@ -61,16 +52,8 @@ class MainViewController: UIViewController {
         let boardState = BoardState()
         boardStateHistory.append(boardState)
         
-        let hOffset: CGFloat = calcHorizontalOffset()
-        let vOffset: CGFloat = UIApplication.shared.statusBarFrame.size.height + self.navigationController!.navigationBar.frame.height + 5
-        
-        let boardSize = UIScreen.main.bounds.size.width - 2.0 * hOffset
-        
-        let frame = CGRect(x: hOffset, y: vOffset, width: boardSize, height: boardSize)
-        boardView = BoardView(frame: frame)
+        boardView = BoardView(frame: calcBoardViewFrame())
         boardView!.setBoardState(boardState)
-        boardView!.hOffset = hOffset
-        boardView!.vOffset = vOffset
         view.addSubview(boardView!)
         
         currentGameStyle = UserDefaults.standard.integer(forKey: gameStyleKey)
@@ -85,6 +68,28 @@ class MainViewController: UIViewController {
                     boardView!.setNeedsDisplay()
                 }
             }
+        }
+    }
+    
+    
+    private func calcBoardViewFrame() -> CGRect {
+        let windowWidth = UIScreen.main.bounds.size.width - 20
+        let windowHeight = UIScreen.main.bounds.size.height - UIApplication.shared.statusBarFrame.size.height - self.navigationController!.navigationBar.frame.height - 20
+        
+        let boardSize = min(windowWidth, windowHeight, 400)
+        
+        let hOffset: CGFloat = (UIScreen.main.bounds.size.width - boardSize) / 2.0
+        let vOffset: CGFloat = UIApplication.shared.statusBarFrame.size.height + self.navigationController!.navigationBar.frame.height + 10
+        
+        let frame = CGRect(x: hOffset, y: vOffset, width: boardSize, height: boardSize)
+        
+        return frame
+    } 
+    
+    
+    override func viewWillLayoutSubviews() {
+        if let boardView = boardView {
+            boardView.frame = calcBoardViewFrame()
         }
     }
     
