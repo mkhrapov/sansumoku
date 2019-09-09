@@ -52,7 +52,7 @@ class MainViewController: UIViewController {
         let boardState = BoardState()
         boardStateHistory.append(boardState)
         
-        boardView = BoardView(frame: calcBoardViewFrame())
+        boardView = BoardView(frame: CGRect.zero)
         boardView!.setBoardState(boardState)
         view.addSubview(boardView!)
         
