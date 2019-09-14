@@ -46,14 +46,21 @@ class EngineCompetition: XCTestCase {
             blue.setBoardState(bs)
             orange.setBoardState(bs)
             
+            var counter = 0
             while !bs.isTerminal() {
                 if bs.player == BLUE {
                     let (x, y) = blue.search()
+                    print("Blue x = \(x), y = \(y)")
                     _ = bs.set(x, y)
                 }
                 else {
                     let (x, y) = orange.search()
+                    print("Orange x = \(x), y = \(y)")
                     _ = bs.set(x, y)
+                }
+                counter += 1
+                if counter > 100 {
+                    fatalError("Something went wrong")
                 }
             }
             
@@ -87,5 +94,19 @@ class EngineCompetition: XCTestCase {
         let (b, o, d) = playoff(count, blue: blue, orange: orange)
         
         print("Blue won \(b) times, Orange won \(o) times, Draw \(d) times out of \(count) plays.")
+    }
+    
+    
+    func testCvsCPPV1() {
+        let bs = BoardState()
+        let c_player = ConnectorOldC(bs)
+        let cppv1_player = ConnectorV1(bs)
+        
+        let count = 50
+        
+        let (b1, o1, d1) = playoff(count, blue: c_player, orange: cppv1_player)
+        let (b2, o2, d2) = playoff(count, blue: cppv1_player, orange: c_player)
+        
+        print("Blue won \(b1 + b2) times, Orange won \(o1 + o2) times, Draw \(d1 + d2) times out of \(count*2) plays.")
     }
 }

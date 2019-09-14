@@ -49,7 +49,7 @@ final class MonteCarloTreeSearch {
                     counts[i] += 1.0
                 }
                 else if res == DONE {
-                    counts[i] += 0.5
+                    counts[i] += 0.05
                 }
             }
             

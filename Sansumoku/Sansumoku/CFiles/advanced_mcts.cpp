@@ -24,12 +24,11 @@
 
 
 #include "advanced_mcts.h"
+#include "BoardState.hpp"
+#include "BaseGameEngine.hpp"
 
-int advanced_mcts_v1(int iter_count, board_state *) {
-    // Create BoardState
-    // Create EngineV1
-    // call search with iter_count
-    
-    
-    return 0;
+int advanced_mcts_v1(int iter_count, board_state *bs) {
+    BoardState boardState(bs);
+    BaseGameEngine engine(boardState);
+    return engine.search(iter_count);
 }

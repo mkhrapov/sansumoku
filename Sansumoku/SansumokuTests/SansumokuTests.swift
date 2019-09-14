@@ -65,9 +65,20 @@ class SansumokuTests: XCTestCase {
     }
     
     
+    // 115.885 seconds
     func testBridgeToCLang() {
         let boardState = BoardState()
         let aiEngine = ConnectorOldC(boardState)
+        aiEngine.setIterCount(10000)
+        let result = aiEngine.search()
+        print(result)
+    }
+    
+    
+    // 179.030 seconds
+    func testCPPV1() {
+        let boardState = BoardState()
+        let aiEngine = ConnectorV1(boardState)
         aiEngine.setIterCount(10000)
         let result = aiEngine.search()
         print(result)

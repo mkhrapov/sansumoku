@@ -56,7 +56,7 @@ void recursive_constraint_processing(board_state *);
 
 
 
-int section_locations[9][9] = {
+static int section_locations[9][9] = {
     { 0,  1,  2,  9, 10, 11, 18, 19, 20},
     { 3,  4,  5, 12, 13, 14, 21, 22, 23},
     { 6,  7,  8, 15, 16, 17, 24, 25, 26},
@@ -68,7 +68,7 @@ int section_locations[9][9] = {
     {60, 61, 62, 69, 70, 71, 78, 79, 80}
 };
 
-int list_of_indexes[8][3] = {
+static int list_of_indexes[8][3] = {
     {0, 1, 2},
     {3, 4, 5},
     {6, 7, 8},
@@ -79,7 +79,7 @@ int list_of_indexes[8][3] = {
     {2, 4, 6}
 };
 
-int peers[81][16] = {
+static int peers[81][16] = {
     {1, 2, 3, 4, 5, 6, 7, 8, 9, 18, 27, 36, 45, 54, 63, 72},
     {0, 2, 3, 4, 5, 6, 7, 8, 10, 19, 28, 37, 46, 55, 64, 73},
     {0, 1, 3, 4, 5, 6, 7, 8, 11, 20, 29, 38, 47, 56, 65, 74},

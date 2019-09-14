@@ -24,6 +24,31 @@
 #ifndef BaseGameEngine_hpp
 #define BaseGameEngine_hpp
 
-#include <stdio.h>
+
+#include "BoardState.hpp"
+
+
+#include <random>
+#include <chrono>
+
+using namespace std;
+
+class BaseGameEngine {
+private:
+    BoardState bs;
+    default_random_engine generator;
+    int iterations;
+    
+    int randomIntUnder(int);
+    int8_t immediatelyWinningMove(BoardState &);
+    vector<int8_t> calcSmartMoves(BoardState &);
+    int8_t actualSearchFunction(vector<int8_t> &);
+    int8_t naivePlayout(BoardState &);
+    
+public:
+    BaseGameEngine(BoardState boardState);
+    int search(int);
+    // actual search function
+};
 
 #endif /* BaseGameEngine_hpp */

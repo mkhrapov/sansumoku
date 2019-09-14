@@ -19,18 +19,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJZ-9Z-SBn">
-                                <rect key="frame" x="184" y="498" width="120" height="50"/>
+                                <rect key="frame" x="174" y="478" width="130" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="&lt;&lt; Undo"/>
                                 <connections>
                                     <action selector="undo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Czm-fF-eqN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Baz-f4-hrR">
-                                <rect key="frame" x="16" y="498" width="120" height="50"/>
+                                <rect key="frame" x="16" y="478" width="130" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
                                     <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pZL-qi-Y1f"/>

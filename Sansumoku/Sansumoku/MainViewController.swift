@@ -74,9 +74,11 @@ class MainViewController: UIViewController {
     
     private func calcBoardViewFrame() -> CGRect {
         let windowWidth = UIScreen.main.bounds.size.width - 20
-        let windowHeight = UIScreen.main.bounds.size.height - UIApplication.shared.statusBarFrame.size.height - self.navigationController!.navigationBar.frame.height - 20
+        let windowHeight = UIScreen.main.bounds.size.height -
+            UIApplication.shared.statusBarFrame.size.height -
+            self.navigationController!.navigationBar.frame.height - 35
         
-        let boardSize = min(windowWidth, windowHeight, 400)
+        let boardSize = min(windowWidth, windowHeight, 600)
         
         let hOffset: CGFloat = (UIScreen.main.bounds.size.width - boardSize) / 2.0
         let vOffset: CGFloat = UIApplication.shared.statusBarFrame.size.height + self.navigationController!.navigationBar.frame.height + 10
