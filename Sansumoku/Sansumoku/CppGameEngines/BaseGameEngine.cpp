@@ -28,8 +28,9 @@
 #include "BaseGameEngine.hpp"
 
 
-BaseGameEngine::BaseGameEngine(BoardState boardState) {
-    bs = boardState;
+BaseGameEngine::BaseGameEngine(BoardState boardState)
+: bs { boardState }
+{
     iterations = 1000;
     
     unsigned int seed = chrono::high_resolution_clock::now().time_since_epoch().count() % 2147483647;

@@ -57,6 +57,11 @@ private:
 public:
     BoardState();
     BoardState(board_state *);
+    BoardState(const BoardState &) = default;
+    BoardState(BoardState &&) = default;
+    BoardState & operator=(const BoardState &) = default;
+    BoardState & operator=(BoardState &&) = default;
+    ~BoardState();
     
     bool isInitialState();
     bool isTerminal();

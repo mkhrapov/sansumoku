@@ -174,10 +174,15 @@ BoardState::BoardState(board_state *bs) {
     }
     
     for(int i = 0; i < 81; i++) {
-        cellOccupied[i] = OPEN;
-        cellValue[i] = OPEN;
-        cellAllowed[i] = true;
+        cellOccupied[i] = bs->cellOccupied[i];
+        cellValue[i] = bs->cellValue[i];
+        cellAllowed[i] = bs->cellAllowed[i];
     }
+}
+
+
+BoardState::~BoardState() {
+    
 }
 
 
