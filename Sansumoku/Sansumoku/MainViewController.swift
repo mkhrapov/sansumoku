@@ -63,10 +63,9 @@ class MainViewController: UIViewController {
             if boardState.legalPlay(x, y) {
                 let nextBoardState = boardState.clone()
                 boardStateHistory.append(nextBoardState)
-                if nextBoardState.set(x, y) {
-                    boardView!.setBoardState(nextBoardState)
-                    boardView!.setNeedsDisplay()
-                }
+                nextBoardState.set(x, y)
+                boardView!.setBoardState(nextBoardState)
+                boardView!.setNeedsDisplay()
             }
         }
     }
@@ -124,10 +123,9 @@ class MainViewController: UIViewController {
             if boardState.legalPlay(x, y) {
                 let nextBoardState = boardState.clone()
                 boardStateHistory.append(nextBoardState)
-                if nextBoardState.set(x, y) {
-                    boardView!.setBoardState(nextBoardState)
-                    boardView!.setNeedsDisplay()
-                }
+                nextBoardState.set(x, y)
+                boardView!.setBoardState(nextBoardState)
+                boardView!.setNeedsDisplay()
             }
         }
     }
@@ -239,27 +237,26 @@ class MainViewController: UIViewController {
         if boardState.legalPlay(x, y) {
             let nextBoardState = boardState.clone()
             boardStateHistory.append(nextBoardState)
-            if nextBoardState.set(x, y) {
-                boardView.setBoardState(nextBoardState)
-                boardView.setNeedsDisplay()
-                
-                if !nextBoardState.isTerminal() && currentGameStyle != 0 {
-                    // playing with AI, so AI should make a move
-                    freezeUIandShowOverlay()
-                    DispatchQueue.main.async(execute: {
-                        let ai = AI(nextBoardState)
-                        let (x, y) = ai.respond()
-                        if nextBoardState.legalPlay(x, y) {
-                            let nextBoardState2 = nextBoardState.clone()
-                            self.boardStateHistory.append(nextBoardState2)
-                            if nextBoardState2.set(x, y) {
-                                boardView.setBoardState(nextBoardState2)
-                                boardView.setNeedsDisplay()
-                                self.unfreezeUIandDismissOverlay()
-                            }
-                        }
-                    })
-                }
+            nextBoardState.set(x, y)
+            boardView.setBoardState(nextBoardState)
+            boardView.setNeedsDisplay()
+            
+            if !nextBoardState.isTerminal() && currentGameStyle != 0 {
+                // playing with AI, so AI should make a move
+                freezeUIandShowOverlay()
+                DispatchQueue.main.async(execute: {
+                    let ai = AI(nextBoardState)
+                    let (x, y) = ai.respond()
+                    if nextBoardState.legalPlay(x, y) {
+                        let nextBoardState2 = nextBoardState.clone()
+                        self.boardStateHistory.append(nextBoardState2)
+                        nextBoardState2.set(x, y)
+                        boardView.setBoardState(nextBoardState2)
+                        boardView.setNeedsDisplay()
+                        self.unfreezeUIandDismissOverlay()
+                        
+                    }
+                })
             }
         }
     }

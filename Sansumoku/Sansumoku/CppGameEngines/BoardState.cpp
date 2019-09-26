@@ -140,8 +140,6 @@ static int peers[81][16] = {
 BoardState::BoardState() {
     // initial board state
     
-    cout << "Inside the empty constructor." << endl;
-    
     _gameWon = OPEN;
     _player = BLUE;
     
@@ -161,8 +159,6 @@ BoardState::BoardState() {
 
 BoardState::BoardState(board_state *bs) {
     // board state as copied from bs pointer
-    
-    cout << "Inside the pointer constructor." << endl;
     
     _gameWon = bs->gameWon;
     _player = bs->player;

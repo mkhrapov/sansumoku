@@ -120,6 +120,10 @@ vector<int8_t> BaseGameEngine::calcSmartMoves(BoardState &board_state) {
 int8_t BaseGameEngine::actualSearchFunction(vector<int8_t> &smartMoves) {
     float scores[81];
     
+    for(int i = 0; i < 81; i++) {
+        scores[i] = 0.0;
+    }
+    
     for(int counter = 0; counter < iterations; counter++) {
         for(int8_t move : smartMoves) {
             BoardState child = bs;

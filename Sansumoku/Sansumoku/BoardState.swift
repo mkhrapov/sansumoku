@@ -157,9 +157,10 @@ final class BoardState {
     
     
     // this function is very complicated. It contains basically all the game logic.
-    func set(_ x: Int, _ y: Int) -> Bool {
+    func set(_ x: Int, _ y: Int) {
         if !legalPlay(x, y) {
-            return false
+            display()
+            fatalError("An illegal move has been made.")
         }
         
         let cell = y*9 + x
@@ -230,8 +231,6 @@ final class BoardState {
         else {
             player = BLUE
         }
-        
-        return true
     }
     
     
