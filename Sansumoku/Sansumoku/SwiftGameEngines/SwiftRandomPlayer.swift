@@ -1,8 +1,8 @@
 //
-//  AI.swift
+//  SwiftRandomPlayer.swift
 //  Sansumoku
 //
-//  Created by Maksim Khrapov on 3/28/19.
+//  Created by Maksim Khrapov on 9/29/19.
 //  Copyright © 2019 Maksim Khrapov. All rights reserved.
 //
 
@@ -23,9 +23,8 @@
 
 import Foundation
 
-final class AI {
-    let givenBoardState: BoardState
-    let aiLevelKey = "aiLevelKey"
+final class SwiftRandomPlayer: AIEngine {
+    private var givenBoardState: BoardState
     
     
     init(_ givenBoardState: BoardState) {
@@ -33,28 +32,24 @@ final class AI {
     }
     
     
-    func respondFast() -> (Int, Int) {
-        let moves = [(3,3), (3, 5), (5,3), (5,5), (4,4)]
+    func setBoardState(_ bs: BoardState) {
+        givenBoardState = bs
+    }
+    
+    
+    func search() -> (Int, Int) {
+        let moves = givenBoardState.allLegalMoves()
+        
+        if moves.count == 0 {
+            return (0, 0)
+        }
+        
+        if(moves.count == 1) {
+            return moves[0]
+        }
+        
         let randomIndex = Int.random(in: 0..<moves.count)
         return moves[randomIndex]
     }
-    
-    
-    func respond() -> (Int, Int) {
-        let aiLevel = UserDefaults.standard.integer(forKey: aiLevelKey)
-        let aiEngine: AIEngine = {
-            switch aiLevel {
-            case 0:
-                return SwiftBasicPlayer(givenBoardState)
-            case 1:
-                return SwiftGKMCPlayer(givenBoardState)
-            case 2:
-                return ConnectorV1(givenBoardState)
-            default:
-                return ConnectorOldC(givenBoardState)
-            }
-        }()
-        
-        return aiEngine.search()
-    }
 }
+

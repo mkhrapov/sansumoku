@@ -11,6 +11,10 @@
 		500DCDE0226CDE8D00045802 /* MonteCarloTreeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DCDDE226CDC7C00045802 /* MonteCarloTreeSearch.swift */; };
 		500DCDE1226CDED200045802 /* BoardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50687E5921F8086300827806 /* BoardState.swift */; };
 		5026430922320D8A00FE6CF2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026430822320D8A00FE6CF2 /* SettingsViewController.swift */; };
+		50548832233FAC2B00D77219 /* SwiftGKMCPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50548831233FAC2B00D77219 /* SwiftGKMCPlayer.swift */; };
+		50548834233FBD1700D77219 /* SwiftGKMCPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50548831233FAC2B00D77219 /* SwiftGKMCPlayer.swift */; };
+		5054883623415CDD00D77219 /* SwiftRandomPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5054883523415CDD00D77219 /* SwiftRandomPlayer.swift */; };
+		5054883823415DA000D77219 /* SwiftRandomPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5054883523415CDD00D77219 /* SwiftRandomPlayer.swift */; };
 		50687E3821F8075700827806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50687E3721F8075700827806 /* AppDelegate.swift */; };
 		50687E3A21F8075700827806 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50687E3921F8075700827806 /* MainViewController.swift */; };
 		50687E3D21F8075700827806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50687E3B21F8075700827806 /* Main.storyboard */; };
@@ -60,6 +64,8 @@
 /* Begin PBXFileReference section */
 		500DCDDE226CDC7C00045802 /* MonteCarloTreeSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonteCarloTreeSearch.swift; sourceTree = "<group>"; };
 		5026430822320D8A00FE6CF2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		50548831233FAC2B00D77219 /* SwiftGKMCPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGKMCPlayer.swift; sourceTree = "<group>"; };
+		5054883523415CDD00D77219 /* SwiftRandomPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRandomPlayer.swift; sourceTree = "<group>"; };
 		50687E3421F8075700827806 /* Sansumoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sansumoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50687E3721F8075700827806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50687E3921F8075700827806 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +183,8 @@
 				50AD838A23232A6000993669 /* AIEngine.swift */,
 				50AD838D23232D0B00993669 /* ConnectorOldC.swift */,
 				50AD839023234EB400993669 /* ConnectorV1.swift */,
+				50548831233FAC2B00D77219 /* SwiftGKMCPlayer.swift */,
+				5054883523415CDD00D77219 /* SwiftRandomPlayer.swift */,
 			);
 			path = SwiftGameEngines;
 			sourceTree = "<group>";
@@ -318,6 +326,7 @@
 				50687E5821F8081A00827806 /* BoardView.swift in Sources */,
 				50687E3A21F8075700827806 /* MainViewController.swift in Sources */,
 				50FE5C2C231E0B1300A33E4E /* BaseGameEngine.cpp in Sources */,
+				5054883623415CDD00D77219 /* SwiftRandomPlayer.swift in Sources */,
 				50FE5C25231DBC2A00A33E4E /* advanced_mcts.cpp in Sources */,
 				5026430922320D8A00FE6CF2 /* SettingsViewController.swift in Sources */,
 				507A5E92227DD42C000FB0CE /* monte_carlo_tree_search.c in Sources */,
@@ -326,6 +335,7 @@
 				50AD83952323507300993669 /* BoardState.cpp in Sources */,
 				50AD838E23232D0B00993669 /* ConnectorOldC.swift in Sources */,
 				50E8C2C82248396300210F81 /* RulesViewController.swift in Sources */,
+				50548832233FAC2B00D77219 /* SwiftGKMCPlayer.swift in Sources */,
 				50FE5C14231DB0E400A33E4E /* SwiftBasicPlayer.swift in Sources */,
 				50687E3821F8075700827806 /* AppDelegate.swift in Sources */,
 				500DCDDF226CDC7C00045802 /* MonteCarloTreeSearch.swift in Sources */,
@@ -338,6 +348,7 @@
 			files = (
 				50AD83962323507300993669 /* BoardState.cpp in Sources */,
 				500DCDE1226CDED200045802 /* BoardState.swift in Sources */,
+				5054883823415DA000D77219 /* SwiftRandomPlayer.swift in Sources */,
 				50AD838C23232A6000993669 /* AIEngine.swift in Sources */,
 				50FE5C17231DB2A700A33E4E /* EngineCompetition.swift in Sources */,
 				50FE5C2D231E0B1300A33E4E /* BaseGameEngine.cpp in Sources */,
@@ -348,6 +359,7 @@
 				507A5E93227DD42C000FB0CE /* monte_carlo_tree_search.c in Sources */,
 				50FE5C15231DB0E400A33E4E /* SwiftBasicPlayer.swift in Sources */,
 				50687E4D21F8075700827806 /* SansumokuTests.swift in Sources */,
+				50548834233FBD1700D77219 /* SwiftGKMCPlayer.swift in Sources */,
 				500DCDE0226CDE8D00045802 /* MonteCarloTreeSearch.swift in Sources */,
 				50FE5C26231DBC2A00A33E4E /* advanced_mcts.cpp in Sources */,
 				50AD838F23232D0B00993669 /* ConnectorOldC.swift in Sources */,
@@ -506,13 +518,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = Sansumoku/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.Sansumoku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sansumoku/Sansumoku-Bridging-Header.h";
@@ -528,13 +542,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = Sansumoku/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.Sansumoku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sansumoku/Sansumoku-Bridging-Header.h";
