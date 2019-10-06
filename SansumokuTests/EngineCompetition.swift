@@ -166,4 +166,62 @@ class EngineCompetition: XCTestCase {
         print("Total.")
         print("Apple won \(b1 + o2) times, My algo won \(o1 + b2) times, Draw \(d1 + d2) times out of \(count*2) plays.")
     }
+    
+    
+    /*
+    First round.
+    V100 (blue) won 18 times, V1000 (orange) won 30 times, Draw 2 times out of 50 plays.
+    Second round.
+    V1000 (blue) won 35 times, V100 (orange) won 13 times, Draw 2 times out of 50 plays.
+    Total.
+    V100 won 31 times, V1000 won 65 times, Draw 4 times out of 100 plays.
+    */
+    func testHundredvsThousand() {
+        let bs = BoardState()
+        
+        let v100 = ConnectorV1(bs)
+        v100.setIterCount(100)
+        let v1000 = ConnectorV1(bs)
+        v1000.setIterCount(1000)
+        
+        let count = 50
+        let (b1, o1, d1) = playoff(count, blue: v100, orange: v1000)
+        let (b2, o2, d2) = playoff(count, blue: v1000, orange:  v100)
+        
+        print("First round.")
+        print("V100 (blue) won \(b1) times, V1000 (orange) won \(o1) times, Draw \(d1) times out of \(count) plays.")
+        print("Second round.")
+        print("V1000 (blue) won \(b2) times, V100 (orange) won \(o2) times, Draw \(d2) times out of \(count) plays.")
+        print("Total.")
+        print("V100 won \(b1 + o2) times, V1000 won \(o1 + b2) times, Draw \(d1 + d2) times out of \(count*2) plays.")
+    }
+    
+    
+    /*
+     First round.
+     V2000 (blue) won 29 times, V1000 (orange) won 20 times, Draw 1 times out of 50 plays.
+     Second round.
+     V1000 (blue) won 23 times, V2000 (orange) won 26 times, Draw 1 times out of 50 plays.
+     Total.
+     V2000 won 55 times, V1000 won 43 times, Draw 2 times out of 100 plays.
+     */
+    func test1Kvs2K() {
+        let bs = BoardState()
+        
+        let v2000 = ConnectorV1(bs)
+        v2000.setIterCount(2000)
+        let v1000 = ConnectorV1(bs)
+        v1000.setIterCount(1000)
+        
+        let count = 50
+        let (b1, o1, d1) = playoff(count, blue: v2000, orange: v1000)
+        let (b2, o2, d2) = playoff(count, blue: v1000, orange:  v2000)
+        
+        print("First round.")
+        print("V2000 (blue) won \(b1) times, V1000 (orange) won \(o1) times, Draw \(d1) times out of \(count) plays.")
+        print("Second round.")
+        print("V1000 (blue) won \(b2) times, V2000 (orange) won \(o2) times, Draw \(d2) times out of \(count) plays.")
+        print("Total.")
+        print("V2000 won \(b1 + o2) times, V1000 won \(o1 + b2) times, Draw \(d1 + d2) times out of \(count*2) plays.")
+    }
 }
