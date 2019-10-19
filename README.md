@@ -11,3 +11,6 @@ What would you find interesting in this repo as a developer?
 - [Monte Carlo Tree Search](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search) algorithm
 
 ![Sansumoku screenshot](img/sansumoku.png)
+
+I gave a talk about Monte Carlo Tree Search at the Austin Algorithms Meetup.
+[PDF Slides](extra/MonteCarloTreeSearch.pdf).
