@@ -52,6 +52,7 @@ int sudokuConstrained(board_state *, int);
 int active(board_state *, int);
 void pretty_print(float *);
 void recursive_constraint_processing(board_state *);
+int is_initial_state(board_state *);
 
 
 
@@ -175,6 +176,18 @@ int monte_carlo_tree_search(int iter_count, board_state *bs) {
     int smart_move_count; // smart move is a move that does not immediately result in opponent win
     int smart_moves[81];
     board_state child;
+    
+    
+    // if initial state
+    // return one of the precomputed values
+    // (3, 3) (5, 3) (4, 4) (5, 3) (5, 5)
+    if(is_initial_state(bs)) {
+        int8_t precomp[] = {30, 32, 40, 48, 50};
+        srand((unsigned int)time(NULL));
+        int r = rand();
+        return precomp[r%5];
+    }
+    
     
     for(int i = 0; i < 81; i++) {
         scores[i] = 0.0;
@@ -612,4 +625,14 @@ void pretty_print(float *scores) {
         printf("\n");
     }
     printf("\n\n\n");
+}
+
+
+int is_initial_state(board_state *bs) {
+    for(int i = 0; i < 81; i++) {
+        if(bs->cellOccupied[i] != 0) {
+            return 0;
+        }
+    }
+    return 1;
 }

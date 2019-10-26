@@ -59,7 +59,7 @@ class MainViewController: UIViewController {
         currentGameStyle = UserDefaults.standard.integer(forKey: gameStyleKey)
         if currentGameStyle == 1 { // AI makes first move
             let ai = AI(boardState)
-            let (x, y) = ai.respondFast()
+            let (x, y) = ai.respond()
             if boardState.legalPlay(x, y) {
                 let nextBoardState = boardState.clone()
                 boardStateHistory.append(nextBoardState)
@@ -119,7 +119,7 @@ class MainViewController: UIViewController {
         
         if currentGameStyle == 1 { // AI makes first move
             let ai = AI(boardState)
-            let (x, y) = ai.respondFast()
+            let (x, y) = ai.respond()
             if boardState.legalPlay(x, y) {
                 let nextBoardState = boardState.clone()
                 boardStateHistory.append(nextBoardState)

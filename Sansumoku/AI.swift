@@ -33,23 +33,20 @@ final class AI {
     }
     
     
-    func respondFast() -> (Int, Int) {
-        let moves = [(3,3), (3, 5), (5,3), (5,5), (4,4)]
-        let randomIndex = Int.random(in: 0..<moves.count)
-        return moves[randomIndex]
-    }
-    
-    
     func respond() -> (Int, Int) {
         let aiLevel = UserDefaults.standard.integer(forKey: aiLevelKey)
         let aiEngine: AIEngine = {
             switch aiLevel {
             case 0:
-                return SwiftBasicPlayer(givenBoardState)
+                return SwiftRandomPlayer(givenBoardState)
             case 1:
-                return SwiftGKMCPlayer(givenBoardState)
+                return SwiftBasicPlayer(givenBoardState)
             case 2:
+                return SwiftGKMCPlayer(givenBoardState)
+            case 3:
                 return ConnectorV1(givenBoardState)
+            case 4:
+                return ConnectorOldC(givenBoardState)
             default:
                 return ConnectorOldC(givenBoardState)
             }
