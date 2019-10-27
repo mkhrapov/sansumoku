@@ -39,33 +39,38 @@ final class SwiftGKMCPlayer: AIEngine {
     
     
     func search() -> (Int, Int) {
-        if givenBoardState.isInitialState() {
-            // use precomputed value
-            let moves = [(3,3), (3, 5), (5,3), (5,5), (4,4)]
-            let randomIndex = Int.random(in: 0..<moves.count)
-            return moves[randomIndex]
+        if #available(iOS 10.0, *) {
+            if givenBoardState.isInitialState() {
+                // use precomputed value
+                let moves = [(3,3), (3, 5), (5,3), (5,5), (4,4)]
+                let randomIndex = Int.random(in: 0..<moves.count)
+                return moves[randomIndex]
+            }
+            
+            
+            let strategist = GKMonteCarloStrategist()
+            strategist.budget = 81
+            strategist.explorationParameter = 4
+            strategist.randomSource = GKRandomSource()
+            strategist.gameModel = GameModel(givenBoardState.clone())
+            
+            let start = Date()
+            let moveWrapper = strategist.bestMoveForActivePlayer()
+            let end = Date()
+            let duration = DateInterval(start: start, end: end)
+            print("Duration: \(duration.duration)")
+            
+            
+            if let move = moveWrapper as? Move {
+                return (move.x, move.y)
+            }
+            
+            // all failed; return an invalid move
+            return (-1, -1)
         }
-        
-        
-        let strategist = GKMonteCarloStrategist()
-        strategist.budget = 81
-        strategist.explorationParameter = 4
-        strategist.randomSource = GKRandomSource()
-        strategist.gameModel = GameModel(givenBoardState.clone())
-        
-        let start = Date()
-        let moveWrapper = strategist.bestMoveForActivePlayer()
-        let end = Date()
-        let duration = DateInterval(start: start, end: end)
-        print("Duration: \(duration.duration)")
-        
-        
-        if let move = moveWrapper as? Move {
-            return (move.x, move.y)
+        else {
+            return SwiftBasicPlayer(givenBoardState).search()
         }
-        
-        // all failed; return an invalid move
-        return (-1, -1)
     }
     
     
