@@ -297,10 +297,10 @@ class BoardView: UIView {
                         let color: CGColor
                         
                         if boardState.player == BLUE {
-                            color = myColors.blueBgColor
+                            color = myColors.blueDigitColor
                         }
                         else {
-                            color = myColors.oranBgColor
+                            color = myColors.oranDigitColor
                         }
                         
                         paintDigit(

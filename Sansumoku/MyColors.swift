@@ -40,7 +40,12 @@ final class MyColors {
     
     var lightLine: CGColor {
         if #available(iOS 13.0, *) {
-            return UIColor.gray.cgColor
+            if UITraitCollection.current.userInterfaceStyle == .dark {
+                return makeColor(50, 50, 50)
+            }
+            else {
+                return UIColor.gray.cgColor
+            }
         }
         else {
             return UIColor.gray.cgColor
@@ -51,7 +56,7 @@ final class MyColors {
     var heavyLine: CGColor {
         if #available(iOS 13.0, *) {
             if UITraitCollection.current.userInterfaceStyle == .dark {
-                return makeColor(200, 200, 200)
+                return makeColor(100, 100, 100)
             }
             else {
                 return UIColor.black.cgColor
@@ -61,6 +66,37 @@ final class MyColors {
             return UIColor.black.cgColor
         }
     }
+    
+    
+    var blueDigitColor: CGColor {
+        if #available(iOS 13.0, *) {
+            if UITraitCollection.current.userInterfaceStyle == .dark {
+                return blueFgColor
+            }
+            else {
+                return blueBgColor
+            }
+        }
+        else {
+            return blueBgColor
+        }
+    }
+    
+    
+    var oranDigitColor: CGColor {
+        if #available(iOS 13.0, *) {
+            if UITraitCollection.current.userInterfaceStyle == .dark {
+                return oranFgColor
+            }
+            else {
+                return oranBgColor
+            }
+        }
+        else {
+            return oranBgColor
+        }
+    }
+    
     
     lazy var black = makeColor(0, 0, 0)
     lazy var blueFgColor = makeColor(28, 134, 238) // dodgerblue2
