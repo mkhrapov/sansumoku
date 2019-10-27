@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		507A5E95227DDABF000FB0CE /* BoardStateInt8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A5E94227DDABF000FB0CE /* BoardStateInt8.swift */; };
 		507A5E96227DDABF000FB0CE /* BoardStateInt8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A5E94227DDABF000FB0CE /* BoardStateInt8.swift */; };
 		50A3793D2287496400358341 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 50A3793C2287496400358341 /* www */; };
+		50A696B1236623AF0037BD20 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A696B0236623AF0037BD20 /* MyColors.swift */; };
 		50AD838B23232A6000993669 /* AIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD838A23232A6000993669 /* AIEngine.swift */; };
 		50AD838C23232A6000993669 /* AIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD838A23232A6000993669 /* AIEngine.swift */; };
 		50AD838E23232D0B00993669 /* ConnectorOldC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD838D23232D0B00993669 /* ConnectorOldC.swift */; };
@@ -84,6 +85,7 @@
 		507A5E91227DD42C000FB0CE /* monte_carlo_tree_search.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = monte_carlo_tree_search.c; sourceTree = "<group>"; };
 		507A5E94227DDABF000FB0CE /* BoardStateInt8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardStateInt8.swift; sourceTree = "<group>"; };
 		50A3793C2287496400358341 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		50A696B0236623AF0037BD20 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
 		50AD838A23232A6000993669 /* AIEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIEngine.swift; sourceTree = "<group>"; };
 		50AD838D23232D0B00993669 /* ConnectorOldC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectorOldC.swift; sourceTree = "<group>"; };
 		50AD839023234EB400993669 /* ConnectorV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectorV1.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				507A5E8F227DD42C000FB0CE /* SansumokuTests-Bridging-Header.h */,
 				5026430822320D8A00FE6CF2 /* SettingsViewController.swift */,
 				50A3793C2287496400358341 /* www */,
+				50A696B0236623AF0037BD20 /* MyColors.swift */,
 			);
 			path = Sansumoku;
 			sourceTree = "<group>";
@@ -274,7 +277,7 @@
 				};
 			};
 			buildConfigurationList = 50687E2F21F8075700827806 /* Build configuration list for PBXProject "Sansumoku" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -323,6 +326,7 @@
 				50AD839123234EB400993669 /* ConnectorV1.swift in Sources */,
 				50AD83992323511800993669 /* EngineV1.cpp in Sources */,
 				507A5E95227DDABF000FB0CE /* BoardStateInt8.swift in Sources */,
+				50A696B1236623AF0037BD20 /* MyColors.swift in Sources */,
 				50687E5821F8081A00827806 /* BoardView.swift in Sources */,
 				50687E3A21F8075700827806 /* MainViewController.swift in Sources */,
 				50FE5C2C231E0B1300A33E4E /* BaseGameEngine.cpp in Sources */,

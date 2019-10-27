@@ -25,30 +25,6 @@ import Foundation
 import UIKit
 
 
-func makeColor(_ red: Int, _ green: Int, _ blue: Int) -> CGColor {
-    let scale:CGFloat = 255.0
-    
-    return UIColor(
-        red: CGFloat(red)/scale,
-        green: CGFloat(green)/scale,
-        blue: CGFloat(blue)/scale,
-        alpha: 1.0
-        ).cgColor
-}
-
-let black = makeColor(0, 0, 0)
-let blueFgColor = makeColor(28, 134, 238) // dodgerblue2
-let blueBgColor = makeColor(212, 229, 247) // lighter version of FG color
-let blueFgColorRecent = black
-let blueBgColorRecent = blueFgColor
-let oranFgColor = makeColor(255, 127, 0) // darkorange1
-let oranBgColor = makeColor(255, 217, 179) // lighter version of FG color
-let oranFgColorRecent = black
-let oranBgColorRecent = oranFgColor
-let finalStrikeColor = makeColor(255, 0, 0) // just make it red for now
-let shadow = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.1).cgColor
-
-
 class BoardView: UIView {
     var boardState: BoardState?
     var indicator: UIActivityIndicatorView?
@@ -70,7 +46,7 @@ class BoardView: UIView {
         if shouldDisplayIndicator {
             if indicator == nil {
                 indicator = UIActivityIndicatorView(style: .whiteLarge)
-                indicator!.color = UIColor.black
+                indicator!.color = UIColor.gray;
                 indicator!.hidesWhenStopped = true
             }
             indicator!.center = CGPoint(x: bounds.midX, y: bounds.midY)
@@ -107,6 +83,7 @@ class BoardView: UIView {
         let boardState: BoardState
         let cellSize: CGFloat
         let sectionSize: CGFloat
+        let myColors: MyColors
         
         
         init(_ c: CGContext, _ r: CGRect, _ bs: BoardState) {
@@ -115,11 +92,12 @@ class BoardView: UIView {
             boardState = bs
             cellSize = r.width / 9.0
             sectionSize = r.width / 3.0
+            myColors = MyColors()
         }
         
         
         func draw() {
-            fillWhite()
+            fillBackground()
             positions()
             lightLines()
             winners()
@@ -128,14 +106,14 @@ class BoardView: UIView {
         }
         
         
-        func fillWhite() {
-            context.setFillColor(UIColor.white.cgColor)
+        func fillBackground() {
+            context.setFillColor(myColors.background)
             context.fill(rect)
         }
         
         
         func lightLines() {
-            context.setStrokeColor(UIColor.gray.cgColor)
+            context.setStrokeColor(myColors.lightLine)
             context.setLineWidth(1)
             
             context.beginPath()
@@ -159,7 +137,7 @@ class BoardView: UIView {
         
         
         func heavyLines() {
-            context.setStrokeColor(UIColor.black.cgColor)
+            context.setStrokeColor(myColors.heavyLine)
             context.setLineWidth(4)
             
             context.beginPath()
@@ -220,7 +198,7 @@ class BoardView: UIView {
             x2 += sectionSize*dx
             y2 += sectionSize*dy
             
-            context.setStrokeColor(finalStrikeColor)
+            context.setStrokeColor(myColors.finalStrikeColor)
             context.setLineWidth(24)
             context.beginPath()
             context.move(to: CGPoint(x: x1, y: y1))
@@ -234,11 +212,11 @@ class BoardView: UIView {
                 for x in 0..<3 {
                     let i = y*3 + x
                     if boardState.sectionWon[i] == BLUE {
-                        context.setFillColor(blueFgColor)
+                        context.setFillColor(myColors.blueFgColor)
                         fillSection(x, y)
                     }
                     else if boardState.sectionWon[i] == ORAN {
-                        context.setFillColor(oranFgColor)
+                        context.setFillColor(myColors.oranFgColor)
                         fillSection(x, y)
                     }
                     
@@ -264,7 +242,7 @@ class BoardView: UIView {
             let y1 = rect.minY + CGFloat(y)*sectionSize + cellSize/2
             let sectionRect = CGRect(x: x1, y: y1, width: cellSize*2, height: cellSize*2)
             
-            context.setFillColor(shadow)
+            context.setFillColor(myColors.shadow)
             context.fillEllipse(in: sectionRect)
         }
         
@@ -279,8 +257,8 @@ class BoardView: UIView {
                                 x: x,
                                 y: y,
                                 digit: boardState.cellValue[i],
-                                fgColor: blueFgColorRecent,
-                                bgColor: blueBgColorRecent
+                                fgColor: myColors.blueFgColorRecent,
+                                bgColor: myColors.blueBgColorRecent
                             )
                         }
                         else {
@@ -288,8 +266,8 @@ class BoardView: UIView {
                                 x: x,
                                 y: y,
                                 digit: boardState.cellValue[i],
-                                fgColor: blueFgColor,
-                                bgColor: blueBgColor
+                                fgColor: myColors.blueFgColor,
+                                bgColor: myColors.blueBgColor
                             )
                         }
                     }
@@ -299,8 +277,8 @@ class BoardView: UIView {
                                 x: x,
                                 y: y,
                                 digit: boardState.cellValue[i],
-                                fgColor: oranFgColorRecent,
-                                bgColor: oranBgColorRecent
+                                fgColor: myColors.oranFgColorRecent,
+                                bgColor: myColors.oranBgColorRecent
                             )
                         }
                         else {
@@ -308,8 +286,8 @@ class BoardView: UIView {
                                 x: x,
                                 y: y,
                                 digit: boardState.cellValue[i],
-                                fgColor: oranFgColor,
-                                bgColor: oranBgColor
+                                fgColor: myColors.oranFgColor,
+                                bgColor: myColors.oranBgColor
                             )
                         }
                     }
@@ -319,10 +297,10 @@ class BoardView: UIView {
                         let color: CGColor
                         
                         if boardState.player == BLUE {
-                            color = blueBgColor
+                            color = myColors.blueBgColor
                         }
                         else {
-                            color = oranBgColor
+                            color = myColors.oranBgColor
                         }
                         
                         paintDigit(
@@ -330,7 +308,7 @@ class BoardView: UIView {
                             y: y,
                             digit: digit,
                             fgColor: color,
-                            bgColor: UIColor.white.cgColor
+                            bgColor: myColors.background
                         )
                     }
                 }
