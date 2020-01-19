@@ -96,6 +96,7 @@
 		50AD83982323511800993669 /* EngineV1.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EngineV1.hpp; sourceTree = "<group>"; };
 		50B77CCA224D9856009D0B12 /* AI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI.swift; sourceTree = "<group>"; };
 		50E1A9E423D3D3FE004C9A34 /* Sansumoku250.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sansumoku250.png; sourceTree = "<group>"; };
+		50E1A9E623D3D499004C9A34 /* Sansumoku.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sansumoku.entitlements; sourceTree = "<group>"; };
 		50E8C2C72248396300210F81 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		50FE5C13231DB0E400A33E4E /* SwiftBasicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBasicPlayer.swift; sourceTree = "<group>"; };
 		50FE5C16231DB2A700A33E4E /* EngineCompetition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineCompetition.swift; sourceTree = "<group>"; };
@@ -146,6 +147,7 @@
 		50687E3621F8075700827806 /* Sansumoku */ = {
 			isa = PBXGroup;
 			children = (
+				50E1A9E623D3D499004C9A34 /* Sansumoku.entitlements */,
 				50E1A9E323D3D2B1004C9A34 /* SupportingFiles */,
 				50FE5C29231E0AD300A33E4E /* CppGameEngines */,
 				50FE5C28231E0A9500A33E4E /* CFiles */,
@@ -533,8 +535,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Sansumoku/Sansumoku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = Sansumoku/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -545,6 +549,7 @@
 				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.Sansumoku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sansumoku/Sansumoku-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -557,8 +562,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Sansumoku/Sansumoku.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 83396K5CDA;
 				INFOPLIST_FILE = Sansumoku/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -569,6 +576,7 @@
 				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.khrapov.Sansumoku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Sansumoku/Sansumoku-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
